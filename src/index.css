@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* iOS specific styles */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Custom scrollbar for iOS feel */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* iOS button active states */
+.ios-button-active {
+  transform: scale(0.95);
+  transition: transform 0.1s ease-in-out;
+}
+
+/* Custom focus styles for iOS */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* iOS card shadow */
+.ios-card-shadow {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+/* iOS haptic feedback simulation */
+@keyframes haptic-light {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.98); }
+  100% { transform: scale(1); }
+}
+
+.haptic-feedback {
+  animation: haptic-light 0.1s ease-in-out;
+}
